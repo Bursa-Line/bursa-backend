@@ -15,6 +15,7 @@ import { DataSource } from 'typeorm';
 import { addTransactionalDataSource } from 'typeorm-transactional';
 
 import { AuthModule } from './modules/auth/auth.module';
+import { ContractModule } from './modules/contract/contract.module';
 import { HealthCheckerModule } from './modules/health-checker/health-checker.module';
 import { PostModule } from './modules/post/post.module';
 import { UserModule } from './modules/user/user.module';
@@ -26,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     UserModule,
     PostModule,
+    ContractModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
