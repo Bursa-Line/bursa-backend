@@ -32,6 +32,7 @@
   ],
   "types": [
       "node",
+      "webpack",
       "webpack-env" // here
     ]
 }
