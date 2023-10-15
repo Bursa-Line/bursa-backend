@@ -22,10 +22,10 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "strict": true,
-    "types": [
-      "node",
-      "webpack",
-      "webpack-env" // here
+//    "types": [
+//      "node",
+//      "webpack",
+//      "webpack-env" // here
     ]
   },
   "include": [
