@@ -26,7 +26,7 @@
 //      "node",
 //      "webpack",
 //      "webpack-env" // here
-    ]
+//    ]
   },
   "include": [
     "src/**/*"
