@@ -31,7 +31,6 @@ import { PostService } from './post.service';
 @ApiTags('posts')
 export class PostController {
   constructor(private postService: PostService) {}
-
   @Post()
   @Auth([RoleType.USER])
   @HttpCode(HttpStatus.CREATED)

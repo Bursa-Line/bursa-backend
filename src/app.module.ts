@@ -1,33 +1,27 @@
 import './boilerplate.polyfill';
 
-import path from 'node:path';
 
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import {
-  AcceptLanguageResolver,
-  HeaderResolver,
-  I18nModule,
-  QueryResolver,
-} from 'nestjs-i18n';
+
 import { DataSource } from 'typeorm';
 import { addTransactionalDataSource } from 'typeorm-transactional';
 
-import { AuthModule } from './modules/auth/auth.module';
-import { ContractModule } from './modules/contract/contract.module';
+// import { AuthModule } from './modules/auth/auth.module';
 import { HealthCheckerModule } from './modules/health-checker/health-checker.module';
-import { PostModule } from './modules/post/post.module';
-import { UserModule } from './modules/user/user.module';
+// import { PostModule } from './modules/post/post.module';
+// import { UserModule } from './modules/user/user.module';
 import { ApiConfigService } from './shared/services/api-config.service';
 import { SharedModule } from './shared/shared.module';
+import {InvoiceModule} from "./modules/invoice/invoice.module";
 
 @Module({
   imports: [
-    AuthModule,
-    UserModule,
-    PostModule,
-    ContractModule,
+    // AuthModule,
+    // UserModule,
+    // PostModule,
+    InvoiceModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
@@ -47,22 +41,22 @@ import { SharedModule } from './shared/shared.module';
         );
       },
     }),
-    I18nModule.forRootAsync({
-      useFactory: (configService: ApiConfigService) => ({
-        fallbackLanguage: configService.fallbackLanguage,
-        loaderOptions: {
-          path: path.join(__dirname, '/i18n/'),
-          watch: configService.isDevelopment,
-        },
-        resolvers: [
-          { use: QueryResolver, options: ['lang'] },
-          AcceptLanguageResolver,
-          new HeaderResolver(['x-lang']),
-        ],
-      }),
-      imports: [SharedModule],
-      inject: [ApiConfigService],
-    }),
+    // I18nModule.forRootAsync({
+    //   useFactory: (configService: ApiConfigService) => ({
+    //     fallbackLanguage: configService.fallbackLanguage,
+    //     loaderOptions: {
+    //       path: path.join(__dirname, '/i18n/'),
+    //       watch: configService.isDevelopment,
+    //     },
+    //     resolvers: [
+    //       { use: QueryResolver, options: ['lang'] },
+    //       AcceptLanguageResolver,
+    //       new HeaderResolver(['x-lang']),
+    //     ],
+    //   }),
+    //   imports: [SharedModule],
+    //   inject: [ApiConfigService],
+    // }),
     HealthCheckerModule,
   ],
   providers: [],

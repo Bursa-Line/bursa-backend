@@ -5,6 +5,10 @@
   "author": "Narek Hakobyan <narek.hakobyan.07@gmail.com>",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "yarn": "1.22.18",
+    "node" : ">=18.18.0 <19.0.0" 
+  },
   "scripts": {
     "build:prod": "tsc -p tsconfig.build.json",
     "postbuild:prod": "copyfiles --up 1 src/**/*.json dist",
@@ -46,6 +50,8 @@
     "@nestjs/swagger": "^7.1.1",
     "@nestjs/terminus": "^10.0.1",
     "@nestjs/typeorm": "^10.0.0",
+    "@solana/pay": "^0.2.5",
+    "@solana/web3.js": "^1.87.1",
     "bcrypt": "^5.1.0",
     "cache-manager-redis-store": "^3.0.1",
     "class-transformer": "~0.5.1",
@@ -89,7 +95,7 @@
     "@types/passport-jwt": "^3.0.9",
     "@types/supertest": "^2.0.12",
     "@types/uuid": "^9.0.2",
-    "@types/webpack-env": "^1.18.1",
+    "@types/webpack-env": "^1.18.2",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vuepress/client": "2.0.0-beta.66",
