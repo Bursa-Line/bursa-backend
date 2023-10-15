@@ -21,7 +21,12 @@
     "skipLibCheck": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "strict": true
+    "strict": true,
+    "types": [
+      "node",
+      "webpack",
+      "webpack-env" // here
+    ]
   },
   "include": [
     "src/**/*"
@@ -30,9 +35,5 @@
     "node_modules",
     "**/*.spec.ts"
   ],
-  "types": [
-      "node",
-      "webpack",
-      "webpack-env" // here
-    ]
+
 }
