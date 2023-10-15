@@ -5,6 +5,9 @@
   "author": "Narek Hakobyan <narek.hakobyan.07@gmail.com>",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "yarn": "1.22.18"
+  },
   "scripts": {
     "build:prod": "tsc -p tsconfig.build.json",
     "postbuild:prod": "copyfiles --up 1 src/**/*.json dist",
