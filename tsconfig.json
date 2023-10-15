@@ -29,5 +29,9 @@
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
-  ]
+  ],
+  "types": [
+      "node",
+      "webpack-env" // here
+    ]
 }
