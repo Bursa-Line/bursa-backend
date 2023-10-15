@@ -6,8 +6,7 @@
   "private": true,
   "license": "MIT",
   "engines": {
-    "yarn": "1.22.18",
-    "node" : ">=18.18.0 <19.0.0" 
+    "yarn": "1.22.18"
   },
   "scripts": {
     "build:prod": "tsc -p tsconfig.build.json",

@@ -12,7 +12,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import {SolanapayService} from "./solanapay.service";
-import {Auth} from "../../decorators";
+// import {Auth} from "../../decorators";
 
 
 @Controller("paymentLink")
@@ -22,7 +22,7 @@ export class PaymentLinkGeneratorController{
   }
 
   @Post()
-  @Auth([], {public:true})
+  // @Auth([], {public:true})
   @HttpCode(HttpStatus.CREATED)
   generateLink(@Body() paymentLinkDto: PaymentLinkDto){
     const solanaPay = new SolanapayService(paymentLinkDto.destinationAddress, paymentLinkDto.amount, paymentLinkDto.description, paymentLinkDto.memo)
