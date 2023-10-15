@@ -1,11 +1,11 @@
 import { Column, Entity, OneToMany, OneToOne, VirtualColumn } from 'typeorm';
-
 import { AbstractEntity } from '../../common/abstract.entity';
 import { RoleType } from '../../constants';
 import { UseDto } from '../../decorators';
 import { PostEntity } from '../post/post.entity';
 import { UserDto, type UserDtoOptions } from './dtos/user.dto';
 import { UserSettingsEntity } from './user-settings.entity';
+import {InvoiceEntity} from "../invoice/invoice.entity";
 
 @Entity({ name: 'users' })
 @UseDto(UserDto)
@@ -42,4 +42,10 @@ export class UserEntity extends AbstractEntity<UserDto, UserDtoOptions> {
 
   @OneToMany(() => PostEntity, (postEntity) => postEntity.user)
   posts?: PostEntity[];
+
+  @OneToMany(()=>InvoiceEntity, (invoice)=> invoice.employer)
+  incomingInvoices?: InvoiceEntity[];
+
+  @OneToMany(()=>InvoiceEntity, (invoice)=>invoice.sender)
+  outgoingInvoices?: InvoiceEntity[];
 }
